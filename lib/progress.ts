@@ -40,3 +40,6 @@ export function rankFor(xp: number) {
   if (xp >= 50) return "Rising Star"
   return "High Flyer"
 }
+// Compatibility alias for old imports
+export const unlockedMemoStore = unlockedMemosStore
+export const ProgressIndicator = () => null
