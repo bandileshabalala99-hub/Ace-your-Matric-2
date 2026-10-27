@@ -1,21 +1,25 @@
 name: Build APK
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: pnpm
       - uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '21'
-      - run: npm install
-      - run: npm run build
+          distribution: temurin
+          java-version: 21
+      - run: pnpm install
+      - run: pnpm build
       - run: npx cap add android || true
       - run: npx cap sync android
       - run: |
