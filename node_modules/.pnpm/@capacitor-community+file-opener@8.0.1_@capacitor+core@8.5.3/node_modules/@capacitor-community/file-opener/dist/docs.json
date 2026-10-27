@@ -1,0 +1,101 @@
+{
+  "api": {
+    "name": "FileOpenerPlugin",
+    "slug": "fileopenerplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "open",
+        "signature": "(options: FileOpenerOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "FileOpenerOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "1.0.0"
+          }
+        ],
+        "docs": "Method to open a file.",
+        "complexTypes": [
+          "FileOpenerOptions"
+        ],
+        "slug": "open"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "FileOpenerOptions",
+      "slug": "fileopeneroptions",
+      "docs": "file open method options",
+      "tags": [
+        {
+          "text": "1.0.0",
+          "name": "since"
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "filePath",
+          "tags": [
+            {
+              "text": "1.0.0",
+              "name": "since"
+            }
+          ],
+          "docs": "file path",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "contentType",
+          "tags": [
+            {
+              "text": "1.0.0",
+              "name": "since"
+            }
+          ],
+          "docs": "MIME type (optional)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "openWithDefault",
+          "tags": [
+            {
+              "text": "1.0.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Use the default platform chooser, if true, otherwise:\nOn Android: it will show \"Open File in..\" title of the chooser dialog, the system will always present the chooser dialog\neven if the user has chosen a default one and if no activity is found to handle the file, the system will still\npresent a dialog with the specified title and an error message No application can perform this action\nOn iOS: it will presents a menu restricted to a list of apps capable of opening the current document.\nThis determination is made based on the document type and on the document types supported by the installed apps.\nTo support one or more document types, an app must register those types in its Info.plist file\nusing the CFBundleDocumentTypes key.\n\n(optional) default value is true",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "chooserPosition",
+          "tags": [
+            {
+              "text": "1.0.3",
+              "name": "since"
+            }
+          ],
+          "docs": "(iOS only; iPad only) Position to anchor the chooser (ShareSheet) menu in the view (optional)\nPlease note that this is applicable only when the application runs on iPad and when\nopenWithDefault is false, otherwise this is ignored",
+          "complexTypes": [],
+          "type": "{ x: number; y: number; } | undefined"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}

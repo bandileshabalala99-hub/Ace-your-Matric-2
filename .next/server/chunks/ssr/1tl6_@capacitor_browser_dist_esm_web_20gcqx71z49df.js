@@ -1,0 +1,3 @@
+module.exports=[16846,a=>{"use strict";var b=a.i(56801);class c extends b.x{constructor(){super(),this._lastWindow=null}async open(a){this._lastWindow=window.open(a.url,a.windowName||"_blank")}async close(){return new Promise((a,b)=>{null!=this._lastWindow?(this._lastWindow.close(),this._lastWindow=null,a()):b("No active window to close!")})}}let d=new c;a.s(["Browser",0,d,"BrowserWeb",0,c])}];
+
+//# sourceMappingURL=1tl6_%40capacitor_browser_dist_esm_web_20gcqx71z49df.js.map
